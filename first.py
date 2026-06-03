@@ -164,11 +164,143 @@ Dictionary : mutable, can contain any data type, key-value pairs,
 #     lt1.append(val)
 # print(lt1)
 
-nums = [4,1,2,1,2,4,3]
+# nums = [4,1,2,1,2,4,3]
 
-def singleNumber( nums):
-    s = set(nums)
-    for i in s:
-        if nums.count(i) == 1:
-            return i
-print(singleNumber( nums))
+# def singleNumber( nums):
+#     s = set(nums)
+#     for i in s:
+#         if nums.count(i) == 1:
+#             return i
+# print(singleNumber( nums))
+
+
+# d = {}
+# s = set()
+# print(type(d))
+# print(type(s))
+
+
+# d = {
+#     "name":"male",
+#     "gender":"male",
+#     "age": 10
+# }
+# print(d)
+
+# d["contact"] = "9876543210"
+# print(d)
+
+
+# sort() : sort with-in the list
+# nums.sorted() : return a new sorted list
+
+
+'''
+Object Oriented Programming
+
+Class: a blueprint for creating objects.
+Object: a real-world entity or concept.
+
+4 pillars of OOPs:
+1. Encapsulation: _var (protected, same class, same package) 
+                , __var (private, only within the class)
+2. Inheritance: a class can inherit properties from methods of 
+                another class.
+3. Polymorphism: a method can have different implementations for 
+                 different objects.
+4. Abstraction: - a class can have abstract methods, 
+                which are not implemented in the class.
+                - Subclasses must implement these methods.
+                - Abstract methods are declared with the @abstractmethod decorator.
+                - Abstract classes are declared with the @abstractclass decorator.
+'''
+
+# class Sample:
+#     bank = "BOI"
+
+#     def __init__(self,ac,bal):
+#         self.account = ac
+#         self.balance = bal
+
+#     def func1(self, name, age=100):
+#         print("balance:", self.balance, "name:", name, "age:", age)
+
+# s =Sample(1001,10000000)
+# s1 =Sample(1002,100)
+
+# s.func1( age=27, name="Nikunj")
+# s1.func1(name="Raj")
+# print(s.bank, s1.bank)
+
+# Encapsulation
+
+# class Sample:
+#     bank = "BOI"
+
+#     def __init__(self,ac,bal):
+#         self.__account = ac
+#         self.balance = bal
+    
+#     def get_account(self):
+#         return self.__account
+
+#     def set_account(self, ac):
+#         self.__account = ac
+
+#     def __func2 (self):
+#         print("private method func2()")
+
+#     def func1(self, name, age=100):
+#         self.__func2()
+#         print("balance:", self.balance, "name:", name, "age:", age)
+
+# s =Sample(1001,10000000)
+# s1 =Sample(1002,100)
+
+# s.func1( age=27, name="Nikunj")
+# s1.func1(name="Raj")
+# print(s.get_account(), s1.get_account())
+# s.set_account(11)
+# s1.set_account(22)
+
+# print(s.get_account(), s1.get_account())
+
+# class Sample:
+#     bank = "BOI"
+
+#     def __init__(self,ac,bal):
+#         self.account = ac
+#         self._balance = bal
+
+#     def func1(self, name, age=100):
+#         print("balance:", self._balance, "name:", name, "age:", age)
+
+# s =Sample(1001,10000000)
+# s1 =Sample(1002,100)
+
+# s.func1( age=27, name="Nikunj")
+# s1.func1(name="Raj")
+# print(s._balance, s1._balance)
+
+
+class Sample:
+    bank = "BOI"
+
+    def __init__(self,ac,bal):
+        self.account = ac
+        self._balance = bal
+
+    def func1(self, name, age=100):
+        print("balance:", self._balance, "name:", name, "age:", age)
+
+class Mapple (Sample) :
+    def __init__(self,ac,bal,branch):
+        super().__init__(ac,bal)
+        self.branch = branch
+
+    def greet(self):
+        print("Welcome to User")
+        print("branch:", self.branch)
+m = Mapple(11, 50000,"MIT")
+m.greet()
+m.func1("Nikunj", 27)
