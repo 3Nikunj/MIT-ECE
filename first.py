@@ -283,24 +283,43 @@ Object: a real-world entity or concept.
 # print(s._balance, s1._balance)
 
 
-class Sample:
-    bank = "BOI"
+# class Sample:
+#     bank = "BOI"
+#     def __init__(self,ac,bal):
+#         self.account = ac
+#         self._balance = bal
 
-    def __init__(self,ac,bal):
-        self.account = ac
-        self._balance = bal
+#     def func1(self, name, age=100):
+#         print("balance:", self._balance, "name:", name, "age:", age)
 
-    def func1(self, name, age=100):
-        print("balance:", self._balance, "name:", name, "age:", age)
+# class Mapple (Sample) :
+#     def __init__(self,ac,bal,branch):
+#         super().__init__(ac,bal)
+#         self.branch = branch
 
-class Mapple (Sample) :
-    def __init__(self,ac,bal,branch):
-        super().__init__(ac,bal)
-        self.branch = branch
+#     def greet(self):
+#         print("Welcome to User")
+#         print("branch:", self.branch)
+# m = Mapple(11, 50000,"MIT")
+# m.greet()
+# m.func1("Nikunj", 27)
 
-    def greet(self):
-        print("Welcome to User")
-        print("branch:", self.branch)
-m = Mapple(11, 50000,"MIT")
-m.greet()
-m.func1("Nikunj", 27)
+
+# class Sample:
+#     a = 100
+#     def func1(self):
+#         print("inside func1() of Sample")
+
+# class Mapple:
+#     b = 100
+#     def func2(self):
+#         print("inside func2() of Mapple")
+
+# class Dimple (Sample, Mapple):
+#     c = 100
+#     def func3(self):
+#         print("inside func3() of Dimple")
+
+# s = Sample()
+# d = Dimple() 
+# d.
